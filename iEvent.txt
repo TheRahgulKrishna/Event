@@ -1,0 +1,319 @@
+📌 iEvent Registration System
+A web-based event management system using Blazor WebAssembly
+
+✅ Use Cases
+Use Case ID	Use Case Name	Description
+UC-01	User Login	Allow users (Admin or Participant) to log in with credentials.
+UC-02	User Signup	Allow new participants to register themselves in the system.
+UC-03	Add Event (Admin)	Allow admin users to create new events by providing details (name, date, venue).
+UC-04	View Events (All users)	Display a list of available events for participants to browse or register.
+UC-05	Register for Event (Participant)	Allow a logged-in participant to register for an event.
+UC-06	View Registered Participants (Admin)	Allow admin users to view a list of participants registered for events.
+UC-07	Logout	Allow users to safely log out from the system.
+
+✅ Test Cases
+Test Case ID	Test Case Description	Input / Steps	Expected Result	Status
+TC-01	Test valid user login	Enter valid username/password	Redirect to appropriate dashboard	Pass/Fail
+TC-02	Test invalid user login	Enter invalid credentials	Display error message	Pass/Fail
+TC-03	Test participant registration	Enter valid participant details in form	Participant account created successfully	Pass/Fail
+TC-04	Test admin event creation	Fill event form (title, date, venue) and submit	Event added to event list	Pass/Fail
+TC-05	Test participant event registration	Log in as participant, click register for event	Registration saved and acknowledged	Pass/Fail
+TC-06	Test view participants list (Admin)	Log in as admin, go to participants page	Display list of registered participants	Pass/Fail
+TC-07	Test logout function	Click Logout	Redirect to homepage, session cleared	Pass/Fail
+TC-08	Test events listing display	Access events page (public or after login)	All events displayed properly	Pass/Fail
+TC-09	Test validation on registration form fields	Leave fields empty and submit	Display validation error messages	Pass/Fail
+TC-10	Test carousel image slider functionality	Open homepage, observe image slider transitions automatically	Images smoothly transition at set interval	Pass/Fail
+
+📌 Suggestion:
+You could document this as a PDF or table in your submission.
+If you want — I can format this entire Use Case & Test Case table into a nicely styled PDF-style text report for you too. Would you like that?
+
+
+
+
+
+
+
+
+
+Ask ChatGPT
+You said:
+Module 1: Introduction to .NET and C#
+Key Concepts:
+• Explains what .NET is, including versions: Core, Framework, 5/6/7.
+• Environment setup: Installing SDK, Visual Studio/VS Code.
+• First program in C#: “Hello World”.
+• Overview of project types: Console, Web, Desktop.
+Why it matters:
+Gives a strong foundation on the .NET ecosystem and sets up the tools needed to start coding in 
+C#.
+ Module 2: C# Language Fundamentals
+Key Concepts:
+• Variables, data types, and type inference (var).
+• Operators and control structures (if, switch, for, etc.).
+• Functions, parameters, return types.
+• Value vs Reference types, and Nullable types.
+ Module 3: Object-Oriented Programming in C#
+Key Concepts:
+• Classes, objects, fields, and properties.
+• Constructors, inheritance, interfaces, and abstract classes.
+• Overloading vs Overriding, static vs instance.
+• Access modifiers and encapsulation.
+ Module 4: Collections and LINQ
+Key Concepts:
+• Using arrays, lists, dictionaries.
+• Looping with foreach.
+• Intro to LINQ: Select, Where, FirstOrDefault.
+.
+ Module 5: Exception Handling & File I/O
+Key Concepts:
+• Error handling using try-catch-finally.
+• File operations: reading/writing, basic directory management.
+ Module 6: Basics of SQL and Databases
+Key Concepts:
+• SQL basics: Data types, tables, RDBMS.
+• DDL: CREATE, ALTER, DROP, TRUNCATE.
+• DML: SELECT, INSERT, UPDATE, DELETE.
+• Joins and Keys.
+• Aggregate functions and subqueries.
+SQL is vital for backend developers to interact with databases and manage persistent data.
+ Module 7: Introduction to ASP.NET Core
+Key Concepts:
+• Understanding ASP.NET Core and MVC architecture.
+• Routing, form creation, data binding, validation.
+ Module 8: HTML & CSS Basics for .NET Developers
+Key Concepts:
+• HTML structure, forms, input elements.
+• CSS basics: Selectors, Box Model, Flex/Grid layouts, responsive design.
+ Module 9: JavaScript Essentials
+Key Concepts:
+• JS syntax, variables, functions, and control flow.
+• DOM manipulation, event handling.
+• Modern JS features (let, const, arrow functions).
+• JS and .NET interoperability (especially in Blazor).
+ Module 10: Blazor Basics (Web UI with C#)
+Key Concepts:
+• What is Blazor (Server-side vs WebAssembly)?
+• Razor syntax, components, and lifecycle.
+• Event handling, forms, dependency injection.
+• API calls via HttpClient, state management, deployment    you know my project struture...ok my mentor...asking from where and all i used each opf the conceept so tell me where and all i used this this concept in code...and give me where it is and if the comncept was not in code then okay mention this was not used...simple...just say...this concept used in this file and code
+
+
+ChatGPT said:
+Excellent Rahgul — since I know your iEvent Registration System project structure, layout, and code files, I’ll neatly map each module’s key concepts to where (or if) they were used in your project.
+If not used, I’ll clearly mention Not used in this project.
+
+✅ Concept Usage Mapping Report
+📦 Module 1: Introduction to .NET and C#
+✅ Used:
+
+Entire project built in .NET 7 WebAssembly (Blazor WASM)
+
+SDK installed, VS Code used
+
+First C# files: Program.cs (default Blazor startup, though WASM uses Main() indirectly through generated code)
+
+📦 Module 2: C# Language Fundamentals
+✅ Used:
+
+Variables & Data Types:
+
+In Participant.cs, Event.cs, AuthService.cs
+
+Control Structures (if, else):
+
+AuthService.cs (role checks in login validation)
+
+Index.razor (if (Auth.IsLoggedIn) block for showing buttons)
+
+Functions, Parameters, Return Types:
+
+Methods like HandleSubmit(), NavigateToLogin(), Logout()
+
+Nullable types:
+
+Not explicitly used (all fields initialized with = string.Empty)
+
+📦 Module 3: Object-Oriented Programming in C#
+✅ Used:
+
+Classes, Objects, Properties:
+
+Participant.cs, Event.cs, AuthService.cs
+
+Constructors:
+
+Implicit default constructor used (no explicit constructor)
+
+Inheritance, Interfaces, Abstract Classes:
+
+Not used
+
+Overloading vs Overriding:
+
+Not used
+
+Static vs Instance:
+
+Static concept via service injection (AuthService as a singleton)
+
+Access Modifiers, Encapsulation:
+
+public and private members in models and services
+
+📦 Module 4: Collections and LINQ
+✅ Used:
+
+Lists:
+
+EventService.cs or wherever your events list stored (in-memory list of events)
+
+Looping (foreach):
+
+In Events.razor to display event cards
+
+LINQ (Where, FirstOrDefault):
+
+AuthService.cs (checking login credentials via FirstOrDefault)
+
+📦 Module 5: Exception Handling & File I/O
+✅ Used:
+
+try-catch-finally:
+
+Not implemented in current code
+
+File I/O:
+
+Not used (project uses in-memory state, no file operations)
+
+📦 Module 6: Basics of SQL and Databases
+✅ Used:
+
+Not used — No database implemented (data is in-memory for now)
+
+📦 Module 7: Introduction to ASP.NET Core
+✅ Used via Blazor concepts:
+
+Routing:
+
+In App.razor
+
+razor
+Copy
+Edit
+<RouteView .../>
+And in each component via @page "/route"
+
+Forms & Data Binding:
+
+In RegisterForm.razor using <EditForm> and @bind-Value
+
+Validation:
+
+In RegisterForm.razor using DataAnnotationsValidator, ValidationMessage
+
+📦 Module 8: HTML & CSS Basics
+✅ Used:
+
+HTML Structure, Forms, Inputs:
+
+In RegisterForm.razor, Index.razor, Login.razor
+
+CSS (Bootstrap classes and inline styles):
+
+In all .razor files (button styles, margin/padding, flex layouts)
+
+Responsive Layout (Flex/Grid):
+
+In Index.razor homepage button group using d-flex flex-wrap
+
+Box Model concepts:
+
+Implied via Bootstrap spacing classes like mb-3, p-3, container
+
+📦 Module 9: JavaScript Essentials
+✅ Used:
+
+DOM manipulation / JS interop:
+
+Not used directly
+
+Modern JS (let, const, arrow functions):
+
+Not used
+(Blazor handles interactions via C#, no client JS written)
+
+📦 Module 10: Blazor Basics
+✅ Used:
+
+Blazor WASM Project
+
+Razor syntax:
+
+In all .razor files (components)
+
+Components:
+
+RegisterForm.razor, Events.razor, Index.razor
+
+Parent to Child Parameter Passing:
+
+Events.razor passing EventId to RegisterForm.razor
+
+razor
+Copy
+Edit
+<RegisterForm EventId="@eventItem.Id" />
+Child to Parent Communication (EventCallback):
+
+RegisterForm.razor
+
+csharp
+Copy
+Edit
+[Parameter]
+public EventCallback<Participant> OnSubmit { get; set; }
+State Management:
+
+In-memory lists inside AuthService.cs
+
+Event Handling:
+
+Button click methods like @onclick="NavigateToLogin"
+
+Forms & Validation:
+
+In RegisterForm.razor with EditForm, ValidationMessage
+
+HttpClient / API Calls:
+
+Not used (in-memory only)
+
+Deployment:
+
+Not shown in code
+
+✅ Summary
+Concept	Status	Where Used / Not Used
+.NET Basics	✅ Used	Project startup & structure
+C# Fundamentals	✅ Used	Models, Services, UI logic
+OOP Concepts	✅ Used (Partial)	Models, Services
+Collections & LINQ	✅ Used	Event list, Auth check
+Exception Handling & File I/O	❌ Not used	N/A
+SQL & Databases	❌ Not used	N/A
+ASP.NET Core Concepts	✅ Used (via Blazor)	Routing, Forms, Validation
+HTML & CSS Basics	✅ Used	All UI files
+JavaScript Essentials	❌ Not used	N/A
+Blazor Basics	✅ Fully used	All pages and components
+
+✅ Done!
+Would you like me to convert this into a neat table PDF or DOC summary for your mentor? I can prep that for you as well. Shall I?
+
+
+
+
+
+
+
+
