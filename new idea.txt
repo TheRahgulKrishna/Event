@@ -1,0 +1,129 @@
+📌 TimeUp Project Prompt
+Project Title:
+TimeUp — Workday Time Calculator (Blazor Web App)
+
+Project Type:
+Blazor Web App (.NET 9)
+
+📖 Project Overview:
+Build a Blazor Web App named TimeUp that helps office employees calculate their leaving (out) time based on:
+
+Their in-time (arrival time)
+
+Total break duration
+
+Required work duration (excluding breaks)
+
+The system should allow the user to select their working duration (like 9 hours, 10 hours) via a dropdown, input their in-time, and input the number and duration of breaks they took.
+The app then calculates and displays their expected out-time based on the total work time required excluding breaks.
+
+✅ Features:
+In-Time Input:
+Users can enter their office in-time using a time picker.
+
+Select Work Duration:
+A dropdown for choosing fixed working durations (e.g. 9 hours, 10 hours, etc.)
+
+Add Breaks:
+User can enter how many breaks they took, and input minutes for each break individually.
+
+Calculate Out-Time:
+The app computes the expected out-time by adding the required work duration (excluding break time) to the in-time.
+
+Clean Responsive UI:
+Use Blazor Components with input fields, dropdowns, and a clear results section.
+
+📌 Technical Requirements:
+Blazor Web App with .NET 9
+
+Use TimeOnly type for in-time and out-time calculations
+
+Use TimeSpan for break durations and work durations
+
+Blazor interactive server render mode (@rendermode InteractiveServer)
+
+Razor Components for modular, reusable UI
+
+Proper Program.cs with AddRazorComponents() and AddInteractiveServerComponents()
+
+Clean _Imports.razor for common namespaces:
+
+razor
+Copy
+Edit
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Routing
+Correct App.razor with:
+
+r
+Copy
+Edit
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" />
+    </Found>
+    <NotFound>
+        <LayoutView>
+            <p>Sorry, nothing found at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
+Ensure clean dotnet build without duplicate @using statements
+
+📊 Summary:
+This app simplifies daily office routines by automating out-time calculations based on actual working and break times.
+The goal is to improve work-life balance tracking and time management.
+
+Note:
+The entire project must strictly follow clean Blazor component architecture, proper namespace management, and .NET 9 compatibility.
+
+Lovable
+Worked for 1m 4s
+57m ago
+
+Looking at your request, I can see you want to build a TimeUp workday time calculator. This evokes productivity apps like time tracking tools and shift calculators that help workers manage their schedules effectively.
+
+I'll create a clean, professional time calculator with:
+
+Modern card-based layout with subtle shadows and rounded corners
+Intuitive time inputs with clear labels
+Dynamic break management
+Real-time calculation display
+Responsive design that works on desktop and mobile
+Features for this first version:
+
+Time picker for arrival time
+Dropdown for work duration selection (8, 9, 10 hours)
+Dynamic break addition with individual time inputs
+Automatic out-time calculation
+Clean results display
+Professional blue/gray color scheme
+Design elements:
+
+Card-based layout with clean white backgrounds
+Professional blue accent color (#3B82F6)
+Subtle gradients and shadows
+Responsive grid layout
+Clear typography hierarchy
+Smooth hover transitions
+
+Restore
+
+Code
+
+Create TimeUp Blazor Web App
+Preview Latest
+
+I've created a beautiful and functional TimeUp workday calculator that automatically calculates your departure time based on your arrival time, work duration, and breaks taken.
+
+What's next?
+Refine & Customize: Tweak the design, animations, and layouts via prompts or visual edits.
+Master Prompting: Use "chat mode" to plan out your project without making edits. Use clear, detailed, and iterative prompts for best results.
+GitHub Sync: Transfer your project's code to GitHub for two-way sync of edits.
+Need to save information, add user accounts, or connect with other services? Supabase is a simple way to add these features without complex technical setup.
+
+Supabase
+Connect Supabase
+Visit docs
+Manage knowledge
